@@ -1,0 +1,33 @@
+<div class="container text-center">
+    <div class="row mt-2">
+        <div class="col-10 offset-1">
+            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                
+                <div class="form-group">
+
+                    <input  formControlName="email" type="email" placeholder="Email" class="form-control"
+                    [class.is-invalid]="signupForm.get('email')?.errors &&  signupForm.get('email')?.touched && signupForm.get('email')?.dirty"
+                    (input)="onEmailInput()">
+                             
+                    <div class="invalid-feedback text-left">
+                        Provide a valid email please!!
+                        {{ uniqueEmailError || 'Email must be valid.' }}
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <input formControlName="password" type="password" placeholder="Password" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <input formControlName="passwordConf" type="password" placeholder="Password confirmation" class="form-control" >
+                </div>
+
+                <button [disabled]="signupForm.invalid" class="btn btn-success btn-block" type="submit">Create my account</button>
+
+                <a [routerLink]="['']"> Cancel </a>
+            </form>
+        </div>
+    </div>
+</div>  

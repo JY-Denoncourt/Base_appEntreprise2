@@ -1,0 +1,25 @@
+<div class="fixed-top">
+    <div class="row">
+      <div class="col text-center bg-white">
+        <h1>Recipeasy!</h1>
+      </div>
+    </div>
+  
+    <!-- https://getbootstrap.com/docs/4.0/examples/navbars/ -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <div class="collapse navbar-collapse" style="height: 40px;">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="text-light">Recipes</a>
+                </li>
+            </ul>
+  
+            <a [routerLink]="['/profile']" class="text-light mr-4">Profile</a>
+            <button (click)="logOut()" type="button" class="btn btn-outline-light">Log out</button>
+        </div>
+    </nav>
+  </div>
+  
+  <div class="pt-4" style="margin: 112px 0px 24px 0px;">
+    <router-outlet></router-outlet>
+  </div>
